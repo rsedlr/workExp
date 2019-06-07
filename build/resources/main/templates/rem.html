@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--        <link href = "css/styles.css" rel = "stylesheet"/>-->
+    <title>remove data</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+<h1 style="padding-left: 20px">Remove a record:</h1>
+<div style="padding: 0 60px;">
+    <form action="/delData" method="post" id="aForm">
+        Type:<br>
+        <input type="text" name="type" value="">
+        <br>
+        Platform:<br>
+        <input type="text" name="platform" value="">
+        <br><br>
+        <input type="submit" value="remove record">
+    </form>
+    <div style="padding-top: 20px">
+        <h4 style="color: red; display: none" id="error">Error, please try again</h4>
+        <h4 style="display: none" id="success">Success, click <a href="/data">here</a> to see the result</h4>
+    </div>
+</div>
+<!--        <script>
+             function submitClick(e) {
+                 e.preventDefault();
+                 document.getElementById("success").style.display = "inline";
+                 $(this).submit();
+            }
+
+            $(document).ready(function() {
+                $('#aForm').submit(submitClick);
+            });
+        </script>-->
+</body>
+</html>

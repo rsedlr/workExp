@@ -1,0 +1,50 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.sky.atom.test'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-solr'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-web-services'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'org.postgresql:postgresql'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	compile group: 'org.springframework', name: 'spring-jdbc', version: '5.0.3.RELEASE'
+
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
+
+
+	compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.9.9'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.9'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.9'
+//	compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.9'
+
+
+//	compile group: "org.codehaus.groovy", name: "groovy-all", version: "1.0-groovy-2.4"
+	compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.5.7', ext: 'pom'
+
+	testCompile group:   "org.spockframework", name: "spock-core", version: "1.0-groovy-2.4"
+	testCompile group:	 "org.spockframework", name: "spock-spring", version: "1.0-groovy-2.4"
+	testCompile group:	 "org.codehaus.groovy", name: "groovy-all", version: "1.0-groovy-2.4"
+	testCompile group:	 "org.codehaus.groovy.modules.http-builder", name: "http-builder", version: "0.7.1"
+	testCompile group:	 "com.athaydes", name: "spock-reports", version: "1.2.12"
+}
